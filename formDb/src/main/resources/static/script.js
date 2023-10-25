@@ -3,7 +3,12 @@ function checkData() {
     var num2 = $('#num2').val();
 
     if ($.isNumeric(num1) && $.isNumeric(num2)) {
-        sendPostRequest(num1, num2);
+        var form = $("form").serializeArray();
+        var dataJSON = {};
+        $.each(form, function(index, field){
+            dataJSON[field.name] = field.value;
+        });
+        sendPostRequest(dataJSON);
     } else {
       alert("Inserire solo numeri");
       return false;
@@ -11,21 +16,14 @@ function checkData() {
     return false;
 }
 
-function sendPostRequest(val1, val2) {
-
-    var datiModulo = $("form").serializeArray();
-
-    var datiJSON = {};
-    $.each(datiModulo, function(index, field){
-        datiJSON[field.name] = field.value;
-    });
+function sendPostRequest(dataJSON) {
 
     $.ajax({
         url: '/form',
         type: 'POST',
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(datiJSON),
+        data: JSON.stringify(dataJSON),
         success: function (result) {
             $('#result').text(result.result);
 
