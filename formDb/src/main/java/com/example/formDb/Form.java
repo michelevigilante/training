@@ -17,15 +17,21 @@ public class Form {
 
     private int val1;
     private int val2;
+
     private int sum;
 
-    private Form(){}
+    private String name;
+    private String surname;
+    private String email;
+    private String state;
+    private String province;
+    private String city;
+    private String address;
+    private String comment;
 
-    public Form(int val1, int val2, int sum) {
-        this.val1 = val1;
-        this.val2 = val2;
-        this.sum = sum;
-    }
+
+
+   public Form() {}
 
     public int getVal1() {
 
@@ -46,6 +52,71 @@ public class Form {
 
         this.val2 = val2;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     public void doSum() {
         sum = val1 + val2;
     }

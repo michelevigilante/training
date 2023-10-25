@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
     <div class="container mt-3">
         <table class='table bordered-table'>
             <thead>
@@ -17,6 +16,14 @@
                 <th>Numero 1</th>
                 <th>Numero 2</th>
                 <th>Somma</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Stato</th>
+                <th>Provincia</th>
+                <th>Città</th>
+                <th>Via</th>
+                <th>Commenti</th>
             </tr>
             </thead>
             <tbody th:each="dataForm: ${dataForm}" th:remove="tag">
@@ -24,6 +31,14 @@
                     <td th:text="${dataForm.val1}"></td>
                     <td th:text="${dataForm.val2}"></td>
                     <td th:text="${dataForm.sum}"></td>
+                    <td th:text="${dataForm.name}"></td>
+                    <td th:text="${dataForm.surname}"></td>
+                    <td th:text="${dataForm.email}"></td>
+                    <td th:text="${dataForm.state}"></td>
+                    <td th:text="${dataForm.province}"></td>
+                    <td th:text="${dataForm.city}"></td>
+                    <td th:text="${dataForm.address}"></td>
+                    <td th:text="${dataForm.comment}"></td>
                 </tr>
             </tbody>
         </table>

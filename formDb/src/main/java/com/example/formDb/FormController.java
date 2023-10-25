@@ -12,7 +12,8 @@ public class FormController {
 
     @GetMapping("/form")
     public String getForm(Model model) {
-        model.addAttribute("form", new Form(0,0,0));
+        model.addAttribute("form", new Form());
+
         return "form";
     }
 
@@ -26,7 +27,6 @@ public class FormController {
     public String findAllNum(Model model) {
         Iterable<Form> dataList = this.formRepository.findAll();
         model.addAttribute("dataForm", dataList);
-
         return "listNumDb";
     }
 
@@ -41,7 +41,7 @@ public class FormController {
     @GetMapping("/avg")
     @ResponseBody
     public String calcAvg(){
-        Form dataForm = new Form(0,0,0);
+        Form dataForm = new Form();
         Iterable<Form> dataList2 = this.formRepository.findAll();
 
         return "{\"avg\":" +  dataForm.getAvg(dataList2) + "}";

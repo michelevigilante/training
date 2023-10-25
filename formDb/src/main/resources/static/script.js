@@ -11,18 +11,21 @@ function checkData() {
     return false;
 }
 
-
 function sendPostRequest(val1, val2) {
 
-    let num = {val1: val1, val2: val2};
-    console.log(JSON.stringify(num));
+    var datiModulo = $("form").serializeArray();
+
+    var datiJSON = {};
+    $.each(datiModulo, function(index, field){
+        datiJSON[field.name] = field.value;
+    });
 
     $.ajax({
         url: '/form',
         type: 'POST',
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(num),
+        data: JSON.stringify(datiJSON),
         success: function (result) {
             $('#result').text(result.result);
 
@@ -33,16 +36,16 @@ function sendPostRequest(val1, val2) {
     });
 }
 
-    function calcAvg() {
-        $.ajax({
-                url: '/avg',
-                type: 'GET',
-                dataType: "json",
-                success: function (data) {
-                    $('#avg').text(data.avg);
-                },
-                error: function () {
-                    alert('Errore nella richiesta GET.');
-                }
-            });
-    }
+function calcAvg() {
+      $.ajax({
+           url: '/avg',
+           type: 'GET',
+           dataType: "json",
+           success: function (data) {
+               $('#avg').text(data.avg);
+           },
+           error: function () {
+               alert('Errore nella richiesta GET.');
+           }
+      });
+}
