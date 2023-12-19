@@ -1,0 +1,18 @@
+dependencies {
+	api project(":modules:formService:formService-api")
+
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "10.0.0"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "10.0.0"
+	compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.4.3.100-ga100"
+}
+
+buildService {
+	apiDir = "../formService-api/src/main/java"
+
+	liferay {
+		liferayHome = "../../../../../../LiferayPortal/bundles"
+		deployDir = file("${liferayHome}/osgi/modules")
+	}
+}
+
+group = "com.liferay.training.formExercise"

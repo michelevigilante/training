@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.liferay.training.formExercise">
+	<namespace>MY</namespace>
+	<entity local-service="true" name="Form" remote-service="true">
+
+		<column name="groupId" type="long" />
+		<column name="formId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="address" type="String" />
+		<column name="city" type="String" />
+		<column name="comment" type="String" />
+		<column name="email" type="String" />
+		<column name="name" type="String" />
+		<column name="province" type="String" />
+		<column name="state" type="String" />
+		<column name="sum" type="int" />
+		<column name="surname" type="String" />
+		<column name="val1" type="int" />
+		<column name="val2" type="int" />
+
+	</entity>
+</service-builder>
