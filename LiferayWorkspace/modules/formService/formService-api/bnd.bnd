@@ -1,0 +1,11 @@
+Bundle-Name: formService-api
+Bundle-SymbolicName: com.liferay.training.formExercise.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.training.formExercise.exception,\
+	com.liferay.training.formExercise.model,\
+	com.liferay.training.formExercise.service,\
+	com.liferay.training.formExercise.service.persistence,\
+	com.liferay.training.formExercise.search
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../formService-service/service.xml

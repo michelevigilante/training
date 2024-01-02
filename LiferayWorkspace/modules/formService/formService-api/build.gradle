@@ -1,0 +1,8 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.4.3.100-ga100"
+}
+
+liferay {
+	liferayHome = "../../../../../../LiferayPortal/bundles"
+	deployDir = file("${liferayHome}/osgi/modules")
+}

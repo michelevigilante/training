@@ -1,0 +1,1 @@
+create index IX_817E5A3E on MY_Form (sum);

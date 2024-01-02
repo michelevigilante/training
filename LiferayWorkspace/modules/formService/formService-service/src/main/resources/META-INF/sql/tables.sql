@@ -1,0 +1,20 @@
+create table MY_Form (
+	groupId LONG,
+	formId LONG not null primary key,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	address VARCHAR(75) null,
+	city VARCHAR(75) null,
+	comment_ VARCHAR(75) null,
+	email VARCHAR(75) null,
+	name VARCHAR(75) null,
+	province VARCHAR(75) null,
+	state_ VARCHAR(75) null,
+	sum INTEGER,
+	surname VARCHAR(75) null,
+	val1 INTEGER,
+	val2 INTEGER
+);
